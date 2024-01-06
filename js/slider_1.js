@@ -10,15 +10,28 @@ const textRepairCost = document.getElementById("repair_cost");
 let sliderImagesArray = [
     {
         text: "ROSTOV-ON-DON, ADMIRAL",
-        file: "img/image_1.png"
+        file: "img/image_1.png",
+        city: "Rostov-on-Don LCD admiral",
+        apartament_area: "81 m2",
+        repair_time: "3.5 months",
+        repair_cost: "Upon request"
+
     },
     {
         text: "SOCHI RHIEVES",
-        file: "img/image_2.jpg"
+        file: "img/image_2.jpg",
+        city: "Sochi Thieves",
+        apartament_area: "105 m2",
+        repair_time: "4 months",
+        repair_cost: "Upon request"
     },
     {
         text: "ROSTOV-ON-DON, PATRIOTIC",
-        file: "img/image_3.jpg"
+        file: "img/image_3.jpg",
+        city: "Rostov-on-Don Patriotic",
+        apartament_area: "93 m2",
+        repair_time: "3 months",
+        repair_cost: "Upon request"
     },
 
 ];
@@ -37,12 +50,16 @@ function addListenersToElements() {
         document.getElementById(`slider-button${i}`).addEventListener('click', () => {
             currentImageIndex = i;
             setImage();
+            setDescription()
         });
 
         document.getElementById(`dot${i}`).addEventListener('click', () => {
             currentImageIndex = i;
             setImage();
+            setDescription()
         });
+
+        
     }
 }
 
@@ -55,12 +72,14 @@ const leftArrow = document.getElementById("left-arrow-button");
 leftArrow.addEventListener('click', () => {
     currentImageIndex--;
     setImage();
+    setDescription();
 });
 
 const rightArrow = document.getElementById("right-arrow-button");
 rightArrow.addEventListener('click', () => {
     currentImageIndex++;
     setImage();
+    setDescription();
 });
 
 function setImage() {
@@ -69,13 +88,20 @@ function setImage() {
     if (currentImageIndex < 0)
         currentImageIndex = sliderImagesArray.length - 1;
 
-    sliderImage.style.backgroundImage = "url(\"" + sliderImagesArray[currentImageIndex]['file'] + "\")";
+    sliderImage.style.backgroundImage = `url(${sliderImagesArray[currentImageIndex].file})`;
 
     reduceButtons();
     selectButton(currentImageIndex);
 
     reduceDots();
     selectDot(currentImageIndex);
+}
+
+function setDescription() {
+    textCity.innerHTML = sliderImagesArray[currentImageIndex].city;
+    textApartamentArea.innerHTML = sliderImagesArray[currentImageIndex].apartament_area;
+    textRepairTime.innerHTML = sliderImagesArray[currentImageIndex].repair_time;
+    textRepairCost.innerHTML = sliderImagesArray[currentImageIndex].repair_cost;
 }
 
 function selectButton(index) {
