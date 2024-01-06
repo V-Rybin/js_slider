@@ -65,8 +65,8 @@ function addListenersToElements() {
 
 paintElements();
 addListenersToElements();
-selectButton(0);
-selectDot(0);
+setImage();
+
 
 const leftArrow = document.getElementById("left-arrow-button");
 leftArrow.addEventListener('click', () => {
