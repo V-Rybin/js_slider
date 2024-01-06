@@ -142,7 +142,6 @@
     width: 50px;
     background-color: transparent;
     border: none;
-    z-index: -1;
     position: relative;
 }
 
@@ -181,7 +180,6 @@
     width: 20px;
     background-color: transparent;
     border: none;
-    z-index: -1;
     position: relative;
 }
 
