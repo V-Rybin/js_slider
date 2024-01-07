@@ -95,6 +95,7 @@ function setImage() {
 
     reduceDots();
     selectDot(currentImageIndex);
+
 }
 
 function setDescription() {
