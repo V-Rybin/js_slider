@@ -143,6 +143,7 @@
     background-color: transparent;
     border: none;
     position: relative;
+    color: #FFF;
 }
 
 .dot {
@@ -161,11 +162,14 @@
 #right-arrow-button {
     z-index: 0;
     cursor: pointer;
-    filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(100%);
+    /*filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(100%);*/
+    
+    color: #FFF;
 }
 
 #right-arrow {
     rotate: 180deg;
+    color: #FFF;
 }
 
 .dot {
@@ -181,6 +185,7 @@
     background-color: transparent;
     border: none;
     position: relative;
+    color: #FFF;
 }
 
 .slider-dots {
